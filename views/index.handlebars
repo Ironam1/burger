@@ -1,0 +1,33 @@
+<img src="../assets/img/burger.jpeg" alt="burger" style="width:150px;height:150px;">
+<h1>Eat da Burger!</h1>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+        {{this.burger_name}}
+        {{!-- <form action="/update/{{ id }}" method="post"> --}}
+            <button type="submit" class="devour" data-id="{{this.id}}" data-newdevoured="{{devour}}">Devour It!</button>
+        </form>
+    </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
+        {{this.burger_name}}
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
+<form action="/create" method="POST">
+    <div class="form-group">
+        <input type="text" id="burg" name="burgName">
+        <button type="submit" id="add">Submit!</button>
+        <p>Enter your favorite burger to add it to the list!</p>
+    </div>
+</form>
+
+<a href="/api/burgers">Burgers</a>
