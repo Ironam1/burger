@@ -1,4 +1,6 @@
 $(function(){
+
+    
     // Eat a burger
     $(".devour").on("click", function(evt){
         // evt.preventDefualt();
