@@ -1,15 +1,13 @@
 $(function(){
 
-    
+
     // Eat a burger
     $(".devour").on("click", function(evt){
-        // evt.preventDefualt();
+        evt.preventDefault();
 
         let id = $(this).data("id");
         // let newDevoured = $(this).data("newdevoured")
-        let newDevouredState = {
-            devoured: 1
-        };
+        let newDevouredState = 1;
 
         // put req
         $.ajax("/api/burgers/" + id, {
@@ -21,4 +19,20 @@ $(function(){
         });
     });
 
-})
+    // add a burger
+    $("#add").on("click", function(evt){
+        evt.preventDefault();
+        let newBurger = {
+            burger_name: $("#burg").val().trim(),
+            devoured: 0
+        };
+
+        $.ajax("api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(function(){
+            console.log("Added " + newBurger);
+            location.reload();
+        });
+    });
+});

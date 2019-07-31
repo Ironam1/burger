@@ -3,7 +3,7 @@
 }
 .first {
     text-align: center;
-    
+    font-family: "Marker-Permanent";
 }
 
 .burgs {
@@ -19,6 +19,10 @@
 }
 .devour {
     float: right;
+}
+
+.insert {
+    float: left;
 }
 
 p {
