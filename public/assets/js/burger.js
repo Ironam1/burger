@@ -35,4 +35,16 @@ $(function(){
             location.reload();
         });
     });
+
+    // delete the burger
+    $("#remove").on("click", function(evt){
+        evt.preventDefault();
+
+        let id = $(this).data("id");
+
+        $.ajax({
+            type: "DELETE",
+            url: "api/burgers/" + id
+        }).then(location.reload());
+    })
 });
