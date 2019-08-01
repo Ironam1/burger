@@ -16,7 +16,7 @@
     position: relative;
 }
 .eaten {
-    float: left;
+    float: right;
 }
 .devour {
     float: right;
