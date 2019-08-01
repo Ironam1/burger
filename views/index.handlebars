@@ -26,6 +26,7 @@
             {{#if devoured}}
             <li>
                 {{this.burger_name}}
+                <button type="button" class="btn btn-danger" id="remove" data-id="{{this.id}}">Delete!</button>
             </li>
             {{/if}}
             {{/each}}
