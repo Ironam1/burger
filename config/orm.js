@@ -74,7 +74,8 @@ let orm = {
 
         cb(res);
     });
-  },
+  }
+//   ,
   
 //   deleteOne: function(table, condition, cb) {
 //       var queryString = "DELETE * FROM " + table;
@@ -90,6 +91,6 @@ let orm = {
 //           cb(result);
 //       });
 //   }
-// };
+};
 
 module.exports = orm;
