@@ -27,7 +27,7 @@ $(function(){
             devoured: 0
         };
 
-        $.ajax("api/burgers", {
+        $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then(function(){
@@ -37,7 +37,7 @@ $(function(){
     });
 
     // delete the burger
-    $("#remove").on("click", function(evt){
+    $(".eat").on("click", function(evt){
         evt.preventDefault();
 
         let id = $(this).data("id");

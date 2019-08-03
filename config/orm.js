@@ -59,38 +59,38 @@ let orm = {
     });
   },
   updateOne: function(table, condition, cb) {
+    console.log("orm " + condition);
     var queryString = "UPDATE " + table;
-    queryString += " SET devoured = true ";
-    
+    queryString += " SET devoured = 1 ";
     queryString += " WHERE ";
     queryString += condition;
 
     console.log(queryString);
 
     connection.query(queryString, function(err, res) {
-        if (err) {
-            throw err;
-        }
+      if (err) {
+        throw err;
+      }
 
-        cb(res);
+      cb(res);
     });
   }
-//   ,
-  
-//   deleteOne: function(table, condition, cb) {
-//       var queryString = "DELETE * FROM " + table;
-//       queryString += " WHERE ";
-//       queryString += condition;
+    // ,
 
-//       console.log(queryString);
+    // deleteOne: function(table, condition, cb) {
+    //     var queryString = "DELETE FROM " + table;
+    //     queryString += " WHERE ";
+    //     queryString += condition;
 
-//       connection.query(queryString, function (err, result) {
-//           if (err) {
-//               throw err
-//           }
-//           cb(result);
-//       });
-//   }
+    //     console.log(queryString);
+
+    //     connection.query(queryString, function (err, result) {
+    //         if (err) {
+    //             throw err
+    //         }
+    //         cb(result);
+    //     });
+    // }
 };
 
 module.exports = orm;

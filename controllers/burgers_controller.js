@@ -27,14 +27,11 @@ router.post("/api/burgers", function(req, res) {
 router.put("/api/burgers/:id", function(req, res) {
   let condition = "id = " + req.params.id;
 
+    // console.log(req.body.devoured);
   console.log("condition: ", condition);
-  console.log(req.body);
   burger.updateOne(
-    {
-      devoured: req.body.data
-    },
-    condition,
-    function(result) {
+              condition,
+        function(result) {
       if (result.changedRows == 0) {
         // if the function did not work
         return res.status(404).end();
