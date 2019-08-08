@@ -7,7 +7,7 @@ router.get("/", function(req, res) {
     let hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -28,11 +28,12 @@ router.put("/api/burgers/:id", function(req, res) {
   let condition = "id = " + req.params.id;
 
     // console.log(req.body.devoured);
-  console.log("condition: ", condition);
+  // console.log("condition: ", condition);
   burger.updateOne(
               condition,
         function(result) {
-      if (result.changedRows == 0) {
+          console.log(result);
+      if (result.affectedRows == 0) {
         // if the function did not work
         return res.status(404).end();
       } else {
@@ -42,17 +43,22 @@ router.put("/api/burgers/:id", function(req, res) {
   );
 });
 
-// router.delete("api/burgers/:id", function(req, res) {
-//   let condition = "id = " + req.params.id;
-//   console.log("condition", condition);
+router.delete("/api/burgers/:id", function(req, res) {
+    // console.log(req);
+  let condition = "id = " + req.params.id;
+  // console.log("condition", condition);
 
-//   burger.deleteOne(condition, function(result) {
-//     if (result.changedRows === 0) {
-//       return res.status(404).end();
-//     } else {
-//       res.status(200).end();
-//     }
-//   });
-// });
+  burger.deleteOne(
+      condition, 
+      function(result) {
+        console.log(result);
+    if (result.affectedRows === 0) {
+      // console.log("this 404")
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
 
 module.exports = router;

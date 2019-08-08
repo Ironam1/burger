@@ -59,7 +59,7 @@ let orm = {
     });
   },
   updateOne: function(table, condition, cb) {
-    console.log("orm " + condition);
+    // console.log("orm " + condition);
     var queryString = "UPDATE " + table;
     queryString += " SET devoured = 1 ";
     queryString += " WHERE ";
@@ -75,22 +75,22 @@ let orm = {
       cb(res);
     });
   }
-    // ,
+    ,
 
-    // deleteOne: function(table, condition, cb) {
-    //     var queryString = "DELETE FROM " + table;
-    //     queryString += " WHERE ";
-    //     queryString += condition;
+    deleteOne: function(table, condition, cb) {
+        var queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
 
-    //     console.log(queryString);
+        console.log(queryString);
 
-    //     connection.query(queryString, function (err, result) {
-    //         if (err) {
-    //             throw err
-    //         }
-    //         cb(result);
-    //     });
-    // }
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err
+            }
+            cb(result);
+        });
+    }
 };
 
 module.exports = orm;
