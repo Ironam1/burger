@@ -42,8 +42,7 @@ $(function() {
     let id = $(this).data("id");
     console.log(id);
     $.ajax("/api/burgers/" + id, {
-      type: "DELETE",
-      
+      type: "DELETE"
     }).then(function() {
       console.log(evt);
       location.reload();

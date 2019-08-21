@@ -1,8 +1,5 @@
-
-
 const express = require("express");
 const methOver = require("method-override");
-
 
 const app = express();
 
@@ -26,5 +23,5 @@ const router = require("./controllers/burgers_controller");
 app.use(router);
 
 app.listen(PORT, function() {
-    console.log("app listening on PORT: " + PORT);
+  console.log("app listening on PORT: " + PORT);
 });
