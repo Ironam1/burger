@@ -1,6 +1,6 @@
 # burger
 
-This application is my first full stack project. I have created a server, a database and a client side application to demostrate CRUD.
+This application is my first full stack project. I have created a server, a database and a client side application to demonstrate CRUD.
 
 This application is hosted on Heroku and can be found here: https://fathomless-ridge-51887.herokuapp.com/
 
