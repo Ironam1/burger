@@ -1,6 +1,6 @@
 # Eat-da-Burger
 
-This application is hosted on Heroku and can be found here: https://fathomless-ridge-51887.herokuapp.com/
+This application is hosted on Heroku and can be found here: https://burger-am1.herokuapp.com/
 
 The problem:
 
